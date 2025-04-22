@@ -22,8 +22,11 @@ function ensureSchema () {
 }
 
 
-await initialize()
-ensureSchema()
+initialize()
+.then(() => {
+  ensureSchema()
+})
+.catch(console.error)
 
 
 /**
